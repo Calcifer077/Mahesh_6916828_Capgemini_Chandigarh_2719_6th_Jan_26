@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\CalculatorApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7D9413F3-10CF-4857-BC79-537B82F4270D}|..\\TestingProject\\TestingProject.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week7---16_feb_26 to 21_feb_26\\16_feb_26\\testingproject\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ADE40BA-65ED-4ECF-A55C-9964AF3FB0AA}|CalculatorApp.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week7---16_feb_26 to 21_feb_26\\16_feb_26\\calculatorapp\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ADE40BA-65ED-4ECF-A55C-9964AF3FB0AA}|CalculatorApp.csproj|solutionrelative:calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ADE40BA-65ED-4ECF-A55C-9964AF3FB0AA}|CalculatorApp.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week7---16_feb_26 to 21_feb_26\\16_feb_26\\calculatorapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ADE40BA-65ED-4ECF-A55C-9964AF3FB0AA}|CalculatorApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\TestingProject\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\TestingProject\\UnitTest1.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\TestingProject\\UnitTest1.cs*",
+              "RelativeToolTip": "..\\TestingProject\\UnitTest1.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T05:15:38.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Calculator.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\CalculatorApp\\Calculator.cs",
+              "RelativeDocumentMoniker": "Calculator.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\CalculatorApp\\Calculator.cs",
+              "RelativeToolTip": "Calculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T05:02:11.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\CalculatorApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\CalculatorApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T05:01:37.079Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\XUnit\\GradeCalculator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{791419EF-B701-5674-D760-65C765E8AE34}|GradeCalculator.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week7---16_feb_26 to 21_feb_26\\16_feb_26\\xunit\\gradecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791419EF-B701-5674-D760-65C765E8AE34}|GradeCalculator.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791419EF-B701-5674-D760-65C765E8AE34}|GradeCalculator.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week7---16_feb_26 to 21_feb_26\\16_feb_26\\xunit\\gradecalculator\\gradecalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791419EF-B701-5674-D760-65C765E8AE34}|GradeCalculator.csproj|solutionrelative:gradecalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\XUnit\\GradeCalculator\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\XUnit\\GradeCalculator\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T09:27:51.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GradeCalculator.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\XUnit\\GradeCalculator\\GradeCalculator.cs",
+              "RelativeDocumentMoniker": "GradeCalculator.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week7---16_Feb_26 to 21_Feb_26\\16_Feb_26\\XUnit\\GradeCalculator\\GradeCalculator.cs",
+              "RelativeToolTip": "GradeCalculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T09:27:32.566Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
