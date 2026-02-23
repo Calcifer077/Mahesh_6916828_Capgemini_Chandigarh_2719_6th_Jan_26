@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week2---12_Jan_26 to 18_Jan_26\\Day9_15_Jan_26\\SavingsOfPerson\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3869CC3-2940-3462-A5A3-6F6F6566B40F}|SavingsOfPerson.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week2---12_jan_26 to 18_jan_26\\day9_15_jan_26\\savingsofperson\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3869CC3-2940-3462-A5A3-6F6F6566B40F}|SavingsOfPerson.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week2---12_Jan_26 to 18_Jan_26\\Day9_15_Jan_26\\SavingsOfPerson\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week2---12_Jan_26 to 18_Jan_26\\Day9_15_Jan_26\\SavingsOfPerson\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAApwB0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T08:37:23.848Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

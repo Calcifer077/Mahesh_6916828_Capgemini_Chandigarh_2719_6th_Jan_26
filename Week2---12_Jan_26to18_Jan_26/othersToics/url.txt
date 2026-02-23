@@ -1,0 +1,13 @@
+Thread other programs
+https://www.c-sharpcorner.com/UploadFile/19b1bd/threading-simplified-part-7-thread-priority/
+1) ans:D
+2) ans:option B
+3) ans:A
+4)ans:-option C
+5) ans:option B
+6) ans:-optionB
+7) ans:-option B
+8) ans:- option A
+9) ans:- optionsB
+10) ans:-option A
+
