@@ -67,18 +67,16 @@ inner join Adress a on e.AdressID = a.AdressID
 end;
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
-CREATE PROCEDURE [dbo].[DeleteEmployee]
+CREATE or alter PROCEDURE [dbo].[DeleteEmployee]
 @EmployeeID INT
 AS
 BEGIN
 DECLARE @AddressID INT
 
 BEGIN TRANSACTION
-SELECT @AddressID = AdressID from Employee where EmployeeID = @EmployeeID
 
 DELETE FROM Employee WHERE EmployeeID = @EmployeeID
 
-DELETE FROM Adress WHERE AdressID = @AddressID
 COMMIT TRANSACTION
 
 END
@@ -119,6 +117,27 @@ Adress a on e.AdressID = a.AdressID
 WHERE e.EmployeeID = @EmployeeID
 END
 
+create or alter procedure [dbo].[UpdateEmployee]
+@EmployeeID int,
+@FirstName varchar(100),
+@LastName varchar(100),
+@Email varchar(100)
+as
+begin
+update Employee
+set FirstName = @FirstName, LastName = @LastName, Email = @Email
+where EmployeeID = @EmployeeID
+end;
+
+
+create or alter procedure [dbo].[CreateEmployee]
+@Email varchar(100),
+@FirstName varchar(100),
+@LastName varchar(100)
+as begin
+	Insert into Employee(Email, FirstName, LastName, AdressID)
+	values (@Email, @FirstName, @LastName, 1);
+end;
 
 Execute dbo.GetEmployeeByID 1;
 Execute dbo.GetAllEmployees;
