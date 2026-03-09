@@ -1,0 +1,112 @@
+
+EF Core:	Microsoft Official ORM framework
+
+2 different approaches
+a) Code First Approach
+	Used to create new database
+	Used to create new database with table
+	Used to create new database with table with initial data
+
+
+b) Database First Apporach
+	Used to interact with existing databases
+
+
+
+Demo1:	Code First Approach	=>	To create new database in sql server
+
+In order to create new database
+	You should have Entity class (A class associate to table within database )
+	You should have Context class (A class assoicate with database )
+
+Step1:	Create new project and choose ASP.NET Core with MVC name it as EfCoreCodeFirstApproachDemo01
+	install following 2 libraries
+a)	Microsoft.EntityFrameworkCore.Tools	6.0.24
+b)	Microsoft.EntityFrameworkCore.SqlServer	6.0.24
+c)	Right click on models folder and add new class name it as EmployeeModel.cs
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+[Table("tblEmployees")]
+public class EmployeeModel
+{	
+	//[Key]
+	public int EmployeeModelId{get;set;}
+
+	public string EName{get;set;}
+	public string Job{get;set;}
+	public int Salary{get;set;}	
+}
+d)	Right click on Models folder, Add new class and name it as EmployeeDbContext.cs
+class EmployeeDBContext: DbContext
+{
+	public EmployeeDBContext(DbContextOptions<EmployeeDBContext> options):base(options)
+	{
+	}
+	public DbSet<EmployeeModel>employees{get;set;}
+}
+///REpo
+e) provide connection in appsettings.json file
+"ConnectionStrings": { "cs1": "server=DESKTOP-DM30GHJ;user id=sa;password=welcome;database=KKEmployeeDB" }
+
+f) DI EF Core in program.cs file
+   var cs1 = builder.Configuration.GetConnectionString("cs1");
+   builder.Services.AddDbContext<EmployeeDBContext>(options =>options.UseSqlServer(cs1));
+
+   var app = builder.Build();
+
+
+g)	Generate migration
+	Tools => nuget package mangager => Pm Console
+	add-migration m1
+
+h)	Create database
+	update-database
+
+You can open sql server and see the newly created database
+
+i)	Add new controller, choose controller with ef core
+	select model employee model, context as employeedbcontext
+note change you controller name
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=EmployeeModels}/{action=Index}/{id?}");
+Note:	Above example with 8 steps
+
+=========================
+Same example of above with less steps
+
+Demo2:	Code First Approach	=>	To create new database in sql server
+Step1:	Create new project and choose ASP.NET Core with MVC name it as EfCoreCodeFirstApproachDemo02
+
+Step2:	Add new class in Models folder and name it as CourseModel.cs
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EfCoreCodeFirstApproachDemo02.Models
+{
+    [Table("tblCourses")]
+    public class CourseModel
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Course { get; set; }
+        public string Faculty { get; set; }
+        public int Fee { get; set; }
+    }
+}
+
+Step3:	Add new controller and choose controller with action and EF Core
+Choose model as CourseModel
+Choose controller and new controller
+
+Step4:	Open appsettings.json file and change connection
+
+Step5:	Generate migration
+	Tools => nuget package mangager => Pm Console
+	add-migration m1
+
+Step6:	Create database
+	update-database
+https://github.com/aminul-islam-niloy/NextTaskAPI/tree/master/NextTaskAPI
+https://github.com/spop1987/Lecture/blob/e0582ea61ae0cd39bf8c945b5d3271ab5cba91d9/Lecture/ViewModels/GroupViewModel.cs
