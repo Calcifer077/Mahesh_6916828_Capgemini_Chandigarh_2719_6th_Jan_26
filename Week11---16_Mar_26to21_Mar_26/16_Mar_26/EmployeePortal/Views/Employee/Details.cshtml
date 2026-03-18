@@ -1,0 +1,14 @@
+﻿@model EmployeePortal.Models.Employee
+
+<h2>Employee Details</h2>
+
+@if (TempData["Success"] != null)
+{
+    <p style="color:green">@TempData["Success"]</p>
+}
+
+<p>ID: @Model.Id</p>
+<p>Name: @Model.Name</p>
+<p>Age: @Model.Age</p>
+<p>Email: @Model.Email</p>
+<p>Department: @Model.Department</p>

@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\17_mar_26\\librarymanagementsystem\\views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\17_mar_26\\librarymanagementsystem\\views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\17_mar_26\\librarymanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\17_mar_26\\librarymanagementsystem\\models\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|solutionrelative:models\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\17_mar_26\\librarymanagementsystem\\viewmodels\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|solutionrelative:viewmodels\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\17_mar_26\\librarymanagementsystem\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96A7B066-6212-40FC-BFA1-EEE2DFC8B2D8}|LibraryManagementSystem.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-18T09:34:53.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Views\\Books\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Create.cshtml",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Views\\Books\\Create.cshtml",
+              "RelativeToolTip": "Views\\Books\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-18T09:34:33.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Views\\Books\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Index.cshtml",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Views\\Books\\Index.cshtml",
+              "RelativeToolTip": "Views\\Books\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-18T09:34:11.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T09:33:01.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookViewModel.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\ViewModels\\BookViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\BookViewModel.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\ViewModels\\BookViewModel.cs",
+              "RelativeToolTip": "ViewModels\\BookViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T09:32:18.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Books.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Models\\Books.cs",
+              "RelativeDocumentMoniker": "Models\\Books.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\17_Mar_26\\LibraryManagementSystem\\Models\\Books.cs",
+              "RelativeToolTip": "Models\\Books.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T09:31:07.439Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2>Student Registered</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <p style="color:green">@TempData["SuccessMessage"]</p>
+}
+
+<p>
+    Student ID: <strong>@ViewBag.StudentId</strong>
+</p>
