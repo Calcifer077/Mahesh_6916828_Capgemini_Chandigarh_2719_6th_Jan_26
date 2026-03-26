@@ -1,0 +1,48 @@
+﻿@model ECommerceApp.Models.OrderItem
+
+@{
+    ViewData["Title"] = "Order Item Details";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Order Item Details</h4>
+        </div>
+
+        <div class="card-body">
+            <dl class="row mb-4">
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Order)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Order.Id)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Product)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Product.Name)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+            </dl>
+
+            <div class="d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </a>
+
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

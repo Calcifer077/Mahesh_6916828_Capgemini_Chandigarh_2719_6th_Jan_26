@@ -1,0 +1,55 @@
+﻿@model ECommerceApp.Models.OrderItem
+
+@{
+    ViewData["Title"] = "Edit Order Item";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-warning text-dark">
+            <h4 class="mb-0">Edit Order Item</h4>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="OrderId" class="form-label fw-semibold"></label>
+                    <select asp-for="OrderId" class="form-select" asp-items="ViewBag.OrderId"></select>
+                    <span asp-validation-for="OrderId" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ProductId" class="form-label fw-semibold"></label>
+                    <select asp-for="ProductId" class="form-select" asp-items="ViewBag.ProductId"></select>
+                    <span asp-validation-for="ProductId" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Quantity" class="form-label fw-semibold"></label>
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Changes
+                    </button>
+
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

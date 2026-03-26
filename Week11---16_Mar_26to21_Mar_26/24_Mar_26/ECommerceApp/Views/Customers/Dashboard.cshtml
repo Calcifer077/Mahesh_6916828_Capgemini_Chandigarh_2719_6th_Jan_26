@@ -1,0 +1,86 @@
+﻿@model ECommerceApp.ViewModels.CustomerDashboardViewModel
+
+<div class="container mt-4">
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h2 class="fw-bold"> @Model.CustomerName's Dashboard</h2>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card text-white bg-primary shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Total Orders</h5>
+                    <h3>@Model.TotalOrders</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card text-white bg-success shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Total Spent</h5>
+                    <h3>₹ @Model.TotalSpent</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Section -->
+    @if (!Model.Orders.Any())
+    {
+        <div class="alert alert-info">
+            No orders found.
+        </div>
+    }
+    else
+    {
+        foreach (var order in Model.Orders)
+        {
+            <div class="card mb-4 shadow-sm">
+
+                <!-- Order Header -->
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <strong>Order #@order.OrderId</strong>
+                    <span class="badge bg-secondary">
+                        @order.Shipping?.Status
+                    </span>
+                </div>
+
+                <!-- Order Body -->
+                <div class="card-body">
+
+                    <p class="mb-3">
+                        <strong>Shipping Address:</strong> @order.Shipping?.Address
+                    </p>
+
+                    <!-- Items -->
+                    <ul class="list-group mb-3">
+                        @foreach (var item in order.Items)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    @item.ProductName <span class="text-muted">× @item.Quantity</span>
+                                </span>
+                                <span class="fw-semibold">
+                                    ₹ @item.LineTotal
+                                </span>
+                            </li>
+                        }
+                    </ul>
+
+                    <!-- Total -->
+                    <div class="text-end">
+                        <h5 class="fw-bold">
+                            Total: ₹ @order.OrderTotal
+                        </h5>
+                    </div>
+
+                </div>
+            </div>
+        }
+    }
+
+</div>

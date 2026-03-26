@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\viewmodels\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:viewmodels\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\data\\ecommerceappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:data\\ecommerceappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week11---16_mar_26to21_mar_26\\24_mar_26\\ecommerceapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{61EE6C85-2C54-4415-B04F-E24EB3A9876D}|ECommerceApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:42:33.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderViewModel.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\ViewModels\\OrderViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\OrderViewModel.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\ViewModels\\OrderViewModel.cs",
+              "RelativeToolTip": "ViewModels\\OrderViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:42:26.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderItemViewModel.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\ViewModels\\OrderItemViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\OrderItemViewModel.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\ViewModels\\OrderItemViewModel.cs",
+              "RelativeToolTip": "ViewModels\\OrderItemViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:42:20.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ECommerceAppContext.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Data\\ECommerceAppContext.cs",
+              "RelativeDocumentMoniker": "Data\\ECommerceAppContext.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Data\\ECommerceAppContext.cs",
+              "RelativeToolTip": "Data\\ECommerceAppContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:41:36.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\SeedData.cs",
+              "RelativeDocumentMoniker": "SeedData.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\SeedData.cs",
+              "RelativeToolTip": "SeedData.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAB4AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:40:45.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-24T06:34:47.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week11---16_Mar_26to21_Mar_26\\24_Mar_26\\ECommerceApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAEUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-24T06:34:24.911Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
