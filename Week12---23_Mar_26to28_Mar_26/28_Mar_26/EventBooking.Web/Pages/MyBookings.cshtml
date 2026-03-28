@@ -1,0 +1,94 @@
+@page
+@model EventBooking.Web.Pages.MyBookingsModel
+@{
+    ViewData["Title"] = "My Bookings";
+}
+
+<style>
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #6f42c1, #4f46e5);
+    }
+
+    .btn-gradient {
+        background: linear-gradient(135deg, #6f42c1, #4f46e5);
+        color: white;
+        border: none;
+    }
+
+    .btn-gradient:hover {
+        background: linear-gradient(135deg, #5a32a3, #4338ca);
+        color: white;
+    }
+
+    body {
+        background-color: #f8f9fc;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .table thead {
+        background: linear-gradient(135deg, #6f42c1, #4f46e5);
+        color: white;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f1f3ff;
+    }
+</style>
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0">
+            <i class="bi bi-ticket-perforated text-primary me-2"></i> My Bookings
+        </h2>
+        <a href="/Events" class="btn btn-gradient">
+            <i class="bi bi-plus-circle me-1"></i> Book More
+        </a>
+    </div>
+
+    <!-- Alert -->
+    <div id="bookingsAlert" class="alert d-none"></div>
+
+    <!-- Table Card -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table align-middle mb-0" id="bookingsTable">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Event</th>
+                            <th>Seats</th>
+                            <th>Booked On</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookingsBody">
+                        <tr>
+                            <td colspan="5" class="text-center py-5">
+                                <div class="spinner-border text-primary mb-2"></div>
+                                <p class="text-muted mb-0">Loading your bookings...</p>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+<script>
+    loadMyBookings();
+</script>
+}
