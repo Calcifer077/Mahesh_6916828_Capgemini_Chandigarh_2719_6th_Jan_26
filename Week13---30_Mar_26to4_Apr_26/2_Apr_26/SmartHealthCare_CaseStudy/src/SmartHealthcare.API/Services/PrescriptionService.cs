@@ -10,18 +10,21 @@ public class PrescriptionService : IPrescriptionService
 {
     private readonly IPrescriptionRepository _repo;
     private readonly IMapper _mapper;
+    private readonly IBillService _billService;
     private readonly ILogger<PrescriptionService> _logger;
     private readonly IAppointmentRepository _appointmentRepo;
 
     public PrescriptionService(
         IPrescriptionRepository repo,
         IAppointmentRepository appointmentRepo,
+        IBillService billService,
         IMapper mapper,
         ILogger<PrescriptionService> logger
     )
     {
         _repo = repo;
         _appointmentRepo = appointmentRepo;
+        _billService = billService;
         _mapper = mapper;
         _logger = logger;
     }
@@ -83,20 +86,18 @@ public class PrescriptionService : IPrescriptionService
         return _mapper.Map<PrescriptionResponseDTO>(created!);
     }
 
-    public async Task<PrescriptionResponseDTO> FinalizeAsync(int prescriptionId)
+    public async Task<PrescriptionResponseDTO> FinalizeAsync(FinalizePrescriptionDTO dto)
     {
         var prescription =
-            await _repo.GetByIdAsync(prescriptionId)
-            ?? throw new KeyNotFoundException($"Prescription {prescriptionId} not found");
+            await _repo.GetByIdAsync(dto.PrescriptionId)
+            ?? throw new KeyNotFoundException($"Prescription {dto.PrescriptionId} not found");
 
         if (prescription.Status == "Finalized")
             throw new InvalidOperationException("Prescription is already finalized");
 
-        // Mark prescription as finalized
         prescription.Status = "Finalized";
         _repo.Update(prescription);
 
-        // Auto-complete the appointment
         var appointment =
             await _appointmentRepo.GetByIdAsync(prescription.AppointmentId)
             ?? throw new KeyNotFoundException(
@@ -107,10 +108,13 @@ public class PrescriptionService : IPrescriptionService
         _appointmentRepo.Update(appointment);
 
         await _repo.SaveAsync();
+
+        // Auto-create bill
+        await _billService.CreateAsync(prescription.AppointmentId, dto.MedicineCharges);
+
         _logger.LogInformation(
-            "Prescription {PrescriptionId} finalized, Appointment {AppointmentId} marked Completed",
-            prescriptionId,
-            prescription.AppointmentId
+            "Prescription {PrescriptionId} finalized, Bill created",
+            dto.PrescriptionId
         );
 
         var updated = await _repo.GetWithMedicinesAsync(prescription.Id);

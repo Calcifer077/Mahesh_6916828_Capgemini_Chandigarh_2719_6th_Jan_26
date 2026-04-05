@@ -8,5 +8,8 @@ public interface IPrescriptionService
     Task<PrescriptionDTO> CreateAsync(CreatePrescriptionDTO dto);
 
     Task<PrescriptionResponseDTO> CreateSuggestionAsync(CreatePrescriptionDTO dto); // sets Status = "Suggested"
-    Task<PrescriptionResponseDTO> FinalizeAsync(int prescriptionId);                // sets Status = "Finalized"
+
+    // Task<PrescriptionResponseDTO> FinalizeAsync(int prescriptionId); // sets Status = "Finalized"
+
+    Task<PrescriptionResponseDTO> FinalizeAsync(FinalizePrescriptionDTO dto);
 }

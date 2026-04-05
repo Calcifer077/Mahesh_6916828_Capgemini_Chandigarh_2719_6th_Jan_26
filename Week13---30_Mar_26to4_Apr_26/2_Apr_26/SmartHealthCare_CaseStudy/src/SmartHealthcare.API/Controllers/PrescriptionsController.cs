@@ -68,14 +68,18 @@ public class PrescriptionsController : ControllerBase
         }
     }
 
-    // NEW
     [HttpPatch("{id:int}/finalize")]
     [Authorize(Roles = "Doctor")]
-    public async Task<IActionResult> Finalize(int id)
+    public async Task<IActionResult> Finalize(int id, [FromBody] FinalizePrescriptionDTO dto)
     {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        dto.PrescriptionId = id;
+
         try
         {
-            var result = await _service.FinalizeAsync(id);
+            var result = await _service.FinalizeAsync(dto);
             return Ok(result);
         }
         catch (KeyNotFoundException ex)

@@ -22,4 +22,5 @@ public class Appointment
     public Patient Patient { get; set; } = null!;
     public Doctor Doctor { get; set; } = null!;
     public Prescription? Prescription { get; set; }
+    public Bill? Bill { get; set; } // ADD
 }

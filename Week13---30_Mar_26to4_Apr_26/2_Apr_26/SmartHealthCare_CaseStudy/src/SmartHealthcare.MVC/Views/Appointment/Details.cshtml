@@ -2,11 +2,14 @@
 @{
     ViewData["Title"] = "Appointment Details";
     var prescription = ViewBag.Prescription as SmartHealthcare.Models.DTOs.PrescriptionDTO;
+    var bill = ViewBag.Bill as SmartHealthcare.Models.DTOs.BillDTO;
     var role = ViewBag.Role as string;
     var isDoctor = role == "Doctor";
+    var isPatient = role == "Patient";
     var hasNoRx = prescription == null;
     var isSuggested = prescription?.Status == "Suggested";
     var isFinalized = prescription?.Status == "Finalized";
+    var appointmentIsPending = Model.Status == "Pending";
 }
 
 <div class="page-container">
@@ -65,16 +68,16 @@
     </div>
 
     <!-- Prescription Section -->
-    @if (hasNoRx && isDoctor)
+    @if (hasNoRx && isDoctor && appointmentIsPending)
     {
-        <!-- Doctor: no prescription yet — show create form -->
+        <!-- Doctor: no prescription yet, appointment is pending — show suggest form -->
         <div class="card">
             <div class="card-header">
                 <h3>Add Prescription Suggestion</h3>
             </div>
             <div class="card-body">
                 <form method="post" action="@Url.Action("SuggestPrescription", "Appointment")" id="prescriptionForm">
-                    @Html.AntiForgeryToken() 
+                    @Html.AntiForgeryToken()
                     <input type="hidden" name="appointmentId" value="@Model.Id" />
 
                     <div class="form-group">
@@ -87,7 +90,6 @@
                         <textarea name="Notes" rows="3" maxlength="1000" placeholder="Additional notes (optional)"></textarea>
                     </div>
 
-                    <!-- Medicines -->
                     <div class="section-label">Medicines</div>
                     <div id="medicineList"></div>
 
@@ -98,6 +100,13 @@
                     </div>
                 </form>
             </div>
+        </div>
+    }
+    else if (hasNoRx && isDoctor && !appointmentIsPending)
+    {
+        <!-- Doctor: appointment completed but no prescription -->
+        <div class="empty-state">
+            This appointment is <strong>@Model.Status</strong>. No prescription was added.
         </div>
     }
     else if (prescription != null)
@@ -112,15 +121,22 @@
 
                 @if (isDoctor && isSuggested)
                 {
-                    <!-- Finalize button -->
-                    <form method="post" action="@Url.Action("FinalizePrescription", "Appointment")">
-                        @Html.AntiForgeryToken() 
+                    <!-- Finalize form with medicine charges input -->
+                    <form method="post" action="@Url.Action("FinalizePrescription", "Appointment")" class="finalize-form">
+                        @Html.AntiForgeryToken()
                         <input type="hidden" name="prescriptionId" value="@prescription.Id" />
                         <input type="hidden" name="appointmentId" value="@Model.Id" />
-                        <button type="submit" class="btn btn-success"
-                                onclick="return confirm('Finalize this prescription? This cannot be undone.')">
-                            ✓ Finalize Prescription
-                        </button>
+                        <div class="finalize-row">
+                            <div class="form-group mb-0">
+                                <label>Medicine Charges (₹) <span class="required">*</span></label>
+                                <input type="number" name="medicineCharges" min="0" max="100000"
+                                       step="0.01" required placeholder="e.g. 200" />
+                            </div>
+                            <button type="submit" class="btn btn-success"
+                                    onclick="return confirm('Finalize this prescription and generate bill? This cannot be undone.')">
+                                ✓ Finalize & Generate Bill
+                            </button>
+                        </div>
                     </form>
                 }
             </div>
@@ -169,9 +185,69 @@
             </div>
         </div>
     }
-    else if (!isDoctor)
+    else if (!isDoctor && hasNoRx)
     {
         <div class="empty-state">No prescription available for this appointment.</div>
+    }
+
+    <!-- Bill Section -->
+    @if (bill != null)
+    {
+        <div class="card">
+            <div class="card-header space-between">
+                <div>
+                    <h3>Bill</h3>
+                    <span class="status status-@bill.PaymentStatus.ToLower()">@bill.PaymentStatus</span>
+                </div>
+
+                @if (isPatient && bill.PaymentStatus == "Unpaid")
+                {
+                    <form method="post" action="@Url.Action("PayBill", "Appointment")">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="billId" value="@bill.Id" />
+                        <input type="hidden" name="appointmentId" value="@Model.Id" />
+                        <button type="submit" class="btn btn-primary"
+                                onclick="return confirm('Confirm payment of ₹@bill.TotalAmount?')">
+                            Pay ₹@bill.TotalAmount
+                        </button>
+                    </form>
+                }
+            </div>
+
+            <div class="card-body">
+                <div class="grid">
+                    <div>
+                        <h4>Consultation Fee</h4>
+                        <p>₹@bill.ConsultationFee</p>
+
+                        <h4 class="mt">Medicine Charges</h4>
+                        <p>₹@bill.MedicineCharges</p>
+
+                        <h4 class="mt">Total Amount</h4>
+                        <p class="total-amount">₹@bill.TotalAmount</p>
+                    </div>
+                    <div>
+                        <h4>Billed On</h4>
+                        <p>@bill.CreatedAt.ToString("dd MMM yyyy, HH:mm")</p>
+
+                        @if (bill.PaidAt.HasValue)
+                        {
+                            <h4 class="mt">Paid On</h4>
+                            <p>@bill.PaidAt.Value.ToString("dd MMM yyyy, HH:mm")</p>
+                        }
+
+                        @if (bill.PaymentStatus == "Paid")
+                        {
+                            <p class="finalized-note">✓ Payment received. Thank you!</p>
+                        }
+                        else if (isPatient)
+                        {
+                            <p class="unpaid-note">⚠ Payment pending. Please pay at your earliest convenience.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 
 </div>
@@ -268,6 +344,8 @@
 
     .card-header.space-between {
         justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
     }
 
     .card-header h2, .card-header h3 { margin: 0; font-weight: 600; }
@@ -299,6 +377,8 @@
     .status-cancelled { background: #fdecea; color: #a33; }
     .status-suggested { background: #e8f0fe; color: #1a56db; }
     .status-finalized { background: #eaf7ee; color: #2f7a4a; }
+    .status-unpaid    { background: #fff4e5; color: #a66b00; }
+    .status-paid      { background: #eaf7ee; color: #2f7a4a; }
 
     .section { margin-bottom: 16px; }
     .section-label { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #444; }
@@ -325,6 +405,7 @@
         border: 1px solid #e5e5e5;
         border-radius: 12px;
         color: #777;
+        margin-bottom: 16px;
     }
 
     /* Forms */
@@ -334,6 +415,8 @@
         flex-direction: column;
         gap: 4px;
     }
+
+    .form-group.mb-0 { margin-bottom: 0; }
 
     .form-group label { font-size: 13px; font-weight: 500; color: #444; }
     .required { color: #c00; }
@@ -351,6 +434,15 @@
 
     .form-group input:focus,
     .form-group textarea:focus { border-color: #1a56db; }
+
+    /* Finalize row — input + button side by side */
+    .finalize-form { display: flex; align-items: flex-end; }
+
+    .finalize-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+    }
 
     /* Medicine rows */
     .medicine-row {
@@ -382,6 +474,7 @@
         font-weight: 500;
         cursor: pointer;
         border: none;
+        white-space: nowrap;
     }
 
     .btn-primary { background: #1a56db; color: #fff; }
@@ -418,5 +511,20 @@
         background: #eaf7ee;
         padding: 10px 14px;
         border-radius: 8px;
+    }
+
+    .unpaid-note {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #a66b00;
+        background: #fff4e5;
+        padding: 10px 14px;
+        border-radius: 8px;
+    }
+
+    .total-amount {
+        font-size: 18px;
+        font-weight: 700;
+        color: #222;
     }
 </style>

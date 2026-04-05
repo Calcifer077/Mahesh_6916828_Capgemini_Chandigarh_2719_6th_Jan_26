@@ -129,21 +129,18 @@ public class AppointmentController : Controller
     {
         var token = HttpContext.Session.GetString("Token");
         if (string.IsNullOrEmpty(token))
-        {
             return RedirectToAction("Login", "Account");
-        }
 
         var appointment = await _apiService.GetAsync<AppointmentDTO>($"appointments/{id}", token);
         if (appointment == null)
-        {
             return NotFound();
-        }
 
         ViewBag.Role = HttpContext.Session.GetString("Role");
         ViewBag.Prescription = await _apiService.GetAsync<PrescriptionDTO>(
             $"prescriptions/appointment/{id}",
             token
         );
+        ViewBag.Bill = await _apiService.GetAsync<BillDTO>($"bills/appointment/{id}", token); // ADD
         return View(appointment);
     }
 
@@ -189,7 +186,8 @@ public class AppointmentController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> FinalizePrescription(
         [FromForm] int prescriptionId,
-        [FromForm] int appointmentId
+        [FromForm] int appointmentId,
+        [FromForm] decimal medicineCharges
     )
     {
         var token = HttpContext.Session.GetString("Token");
@@ -198,20 +196,47 @@ public class AppointmentController : Controller
 
         try
         {
+            var body = new { MedicineCharges = medicineCharges };
             var result = await _apiService.PatchAsync<PrescriptionResponseDTO>(
                 $"prescriptions/{prescriptionId}/finalize",
-                null,
+                body,
                 token
             );
+
             if (result == null)
                 TempData["Error"] = "Failed to finalize prescription.";
             else
-                TempData["Success"] = "Prescription finalized successfully.";
+                TempData["Success"] = "Prescription finalized and bill generated.";
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error finalizing prescription");
             TempData["Error"] = "An error occurred while finalizing the prescription.";
+        }
+
+        return RedirectToAction(nameof(Details), new { id = appointmentId });
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> PayBill([FromForm] int billId, [FromForm] int appointmentId)
+    {
+        var token = HttpContext.Session.GetString("Token");
+        if (string.IsNullOrEmpty(token))
+            return RedirectToAction("Login", "Account");
+
+        try
+        {
+            var result = await _apiService.PatchAsync<BillDTO>($"bills/{billId}/pay", null, token);
+            if (result == null)
+                TempData["Error"] = "Failed to process payment.";
+            else
+                TempData["Success"] = "Payment successful!";
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error processing payment");
+            TempData["Error"] = "An error occurred while processing payment.";
         }
 
         return RedirectToAction(nameof(Details), new { id = appointmentId });

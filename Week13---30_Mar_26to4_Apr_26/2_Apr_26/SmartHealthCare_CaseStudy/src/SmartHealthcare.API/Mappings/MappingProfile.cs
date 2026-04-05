@@ -19,7 +19,13 @@ public class MappingProfile : Profile
         CreateMap<Doctor, DoctorDTO>()
             .ForMember(d => d.FullName, opt => opt.MapFrom(s => s.User.FullName))
             .ForMember(d => d.Email, opt => opt.MapFrom(s => s.User.Email))
-            .ForMember(d => d.Specializations, opt => opt.MapFrom(s => s.DoctorSpecializations.Select(ds => ds.Specialization.Name).ToList()));
+            .ForMember(
+                d => d.Specializations,
+                opt =>
+                    opt.MapFrom(s =>
+                        s.DoctorSpecializations.Select(ds => ds.Specialization.Name).ToList()
+                    )
+            );
         CreateMap<CreateDoctorDTO, Doctor>();
         CreateMap<UpdateDoctorDTO, Doctor>();
 
@@ -36,5 +42,7 @@ public class MappingProfile : Profile
         CreateMap<CreateMedicineDTO, Medicine>();
 
         CreateMap<Specialization, SpecializationDTO>();
+
+        CreateMap<Bill, BillDTO>();
     }
 }
