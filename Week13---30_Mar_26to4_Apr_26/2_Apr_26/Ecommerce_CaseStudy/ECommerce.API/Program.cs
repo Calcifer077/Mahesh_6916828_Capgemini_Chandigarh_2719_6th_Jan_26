@@ -10,15 +10,18 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Controllers
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-    options.JsonSerializerOptions.PropertyNamingPolicy = null;
-});
+builder
+    .Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
 
 // Database
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
 // Repository and Service
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
@@ -35,7 +38,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<OrderValidator>();
 
 // JWT Authentication
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder
+    .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!);
@@ -47,7 +51,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateLifetime = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(key)
+            IssuerSigningKey = new SymmetricSecurityKey(key),
         };
     });
 
@@ -61,75 +65,37 @@ builder.Services.AddScoped<ProductService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Description = "Enter token",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-        Scheme = "Bearer"
-    });
-
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
+    c.AddSecurityDefinition(
+        "Bearer",
+        new OpenApiSecurityScheme
         {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new string[] {}
+            Description = "Enter token",
+            Name = "Authorization",
+            In = ParameterLocation.Header,
+            Type = SecuritySchemeType.Http,
+            Scheme = "Bearer",
         }
-    });
+    );
+
+    c.AddSecurityRequirement(
+        new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer",
+                    },
+                },
+                new string[] { }
+            },
+        }
+    );
 });
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
-
-    if (!db.Categories.Any())
-    {
-        db.Categories.AddRange(
-            new Category { Name = "Electronics" },
-            new Category { Name = "Books" },
-            new Category { Name = "Clothing" }
-        );
-        db.SaveChanges();
-    }
-
-    if (!db.Products.Any())
-    {
-        db.Products.AddRange(
-            new Product { Name = "Smartphone" },
-            new Product { Name = "Laptop" },
-            new Product { Name = "Novel" }
-        );
-        db.SaveChanges();
-    }
-
-    if (!db.ProductCategories.Any())
-    {
-        var electronics = db.Categories.First(c => c.Name == "Electronics");
-        var books = db.Categories.First(c => c.Name == "Books");
-
-        var smartphone = db.Products.First(p => p.Name == "Smartphone");
-        var laptop = db.Products.First(p => p.Name == "Laptop");
-        var novel = db.Products.First(p => p.Name == "Novel");
-
-        db.ProductCategories.AddRange(
-            new ProductCategory { ProductId = smartphone.Id, CategoryId = electronics.Id },
-            new ProductCategory { ProductId = laptop.Id, CategoryId = electronics.Id },
-            new ProductCategory { ProductId = novel.Id, CategoryId = books.Id }
-        );
-        db.SaveChanges();
-    }
-}
 
 // Global Exception Middleware
 app.UseMiddleware<ExceptionMiddleware>();
@@ -142,5 +108,12 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+    await DbSeeder.SeedAsync(db);
+}
 
 app.Run();

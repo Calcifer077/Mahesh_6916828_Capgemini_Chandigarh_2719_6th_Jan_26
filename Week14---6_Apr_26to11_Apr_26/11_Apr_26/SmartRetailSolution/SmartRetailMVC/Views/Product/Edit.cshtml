@@ -1,0 +1,8 @@
+@model SmartRetailMVC.Models.Product
+<h2>Edit Product</h2>
+<form method="post">
+  <input type="hidden" name="Id" value="@Model!.Id" />
+  <label>Name: <input name="Name" value="@Model.Name" /></label><br/><br/>
+  <label>Price: <input name="Price" type="number" step="0.01" value="@Model.Price" /></label><br/><br/>
+  <button type="submit">Update</button>
+</form>
